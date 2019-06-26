@@ -119,11 +119,7 @@ class BayesianUCB(Solver):
 
     def run_one_step(self):
         # Pick the best one with consideration of upper confidence bounds.
-        i = max(
-            range(self.bandit.n),
-            key=lambda x: self._as[x] / float(self._as[x] + self._bs[x]) + beta.std(
-                self._as[x], self._bs[x]) * self.c
-        )
+        i = 0    # HERE MODIFY!
         r = self.bandit.generate_reward(i)
 
         # Update Gaussian posterior
@@ -149,8 +145,7 @@ class ThompsonSampling(Solver):
         return [self._as[i] / (self._as[i] + self._bs[i]) for i in range(self.bandit.n)]
 
     def run_one_step(self):
-        samples = [np.random.beta(self._as[x], self._bs[x]) for x in range(self.bandit.n)]
-        i = max(range(self.bandit.n), key=lambda x: samples[x])
+        i = 0    # HERE MODIFY!
         r = self.bandit.generate_reward(i)
 
         self._as[i] += r
