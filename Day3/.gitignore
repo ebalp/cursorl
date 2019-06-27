@@ -1,0 +1,11 @@
+.DS_Store
+.idea
+.pytest_cache
+__pycache__
+checkpoints/*
+logs/*
+tb/*
+figs/*
+**/*.pyc
+**/*.egg-info
+*~

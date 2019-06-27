@@ -1,0 +1,5 @@
+numpy>=1.16.3
+scipy>=1.2.1
+matplotlib>=3.0.3
+gym>=0.12.5
+tensorflow>=2.0.0-alpha0
